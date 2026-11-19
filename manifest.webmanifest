@@ -1,0 +1,24 @@
+{
+  "name": "Rua — plan · live · grow",
+  "short_name": "Rua",
+  "description": "Your personal life planner: tasks, money, career, learning, wellness and memories in one calm place.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "background_color": "#FDFCFA",
+  "theme_color": "#F7F4F0",
+  "orientation": "any",
+  "categories": ["productivity", "lifestyle", "finance"],
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/rua.svg", "sizes": "any", "type": "image/svg+xml"}
+  ],
+  "shortcuts": [
+    {"name": "Today", "url": "./#today", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "My Planner", "url": "./#planner", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Finance Hub", "url": "./#finance", "icons": [{"src": "icons/icon-192.png", "sizes": "192x192"}]}
+  ]
+}
