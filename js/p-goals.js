@@ -1,4 +1,4 @@
-/* Rua — Goals & Habits */
+/* Organize Life Co. — Goals & Habits */
 (function(){
 'use strict';
 const {esc, uid, num, pct, by, sum, plural, D, Store, icon: I, chart: C} = LOS;

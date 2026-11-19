@@ -1,4 +1,4 @@
-/* Rua — tasks engine, Today, Focus mode, Planner (board/list/table/calendar/timeline/day/week/month/year) */
+/* Organize Life Co. — tasks engine, Today, Focus mode, Planner (board/list/table/calendar/timeline/day/week/month/year) */
 (function(){
 'use strict';
 const {$, $$, esc, uid, num, by, sum, pct, plural, mins, D, Store, icon: I, chart: C} = LOS;

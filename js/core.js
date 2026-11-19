@@ -1,4 +1,4 @@
-/* Rua — core: utilities, dates, storage, images, UI kit, router */
+/* Organize Life Co. — core: utilities, dates, storage, images, UI kit, router */
 (function(){
 'use strict';
 const LOS = window.LOS = {pages:{}, actions:{}, widgets:{}, quick:[], notifProviders:[], searchProviders:[], order:[], onDelete:{}};
@@ -247,7 +247,7 @@ Store.init = async function () {
 function renderSync() {
   const el = $('#sync-status'); if (!el) return;
   const s = Store.status || {kind: 'off', text: 'Loading…'};
-  el.innerHTML = `<div class="sync"><span class="pip ${s.kind === 'cloud' ? '' : s.kind}"></span><span class="txt">${esc(s.text)}</span></div>${LOS.installPrompt ? `<button class="btn sm" style="margin-top:10px;width:100%" data-action="install-app">${I('download')} <span class="txt">Install Rua</span></button>` : ''}`;
+  el.innerHTML = `<div class="sync"><span class="pip ${s.kind === 'cloud' ? '' : s.kind}"></span><span class="txt">${esc(s.text)}</span></div>${LOS.installPrompt ? `<button class="btn sm" style="margin-top:10px;width:100%" data-action="install-app">${I('download')} <span class="txt">Install app</span></button>` : ''}`;
 }
 
 /* ---------- images ---------- */
@@ -637,7 +637,7 @@ LOS.exportFile = async (filename, text, mime = 'application/json') => {
     const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], {type: mime})); a.download = filename; document.body.appendChild(a); a.click(); a.remove();
     if (!window.claude) { LOS.toast('Downloaded ' + filename); return; }
   } catch (e) {}
-  if (text.length > 1500000) { LOS.modal({title: 'Download blocked', size: 'narrow', body: `<p class="small" style="margin-top:0">Your browser blocked the download from inside this page. Open Rua in its own tab (or the installed app) and try again.</p>`}); return; }
+  if (text.length > 1500000) { LOS.modal({title: 'Download blocked', size: 'narrow', body: `<p class="small" style="margin-top:0">Your browser blocked the download from inside this page. Open the app in its own tab (or the installed app) and try again.</p>`}); return; }
   LOS.modal({title: 'Your export', size: 'wide', body: `<p class="small muted" style="margin-top:0">If a download didn’t start, copy this and save it as <b>${esc(filename)}</b>.</p><textarea class="input" style="height:300px;font:12px ui-monospace,monospace" readonly>${esc(text)}</textarea>`, foot: `<button class="btn primary" data-cp>${I('copy')} Copy</button>`, onMount: el => el.querySelector('[data-cp]').onclick = async () => { try { await navigator.clipboard.writeText(text); LOS.toast('Copied'); } catch (e) { el.querySelector('textarea').select(); LOS.toast('Press Ctrl/Cmd+C to copy'); } }});
 };
 LOS.toCSV = (rows, cols) => [cols.map(c => c[0]).join(','), ...rows.map(r => cols.map(c => { let v = typeof c[1] === 'function' ? c[1](r) : r[c[1]]; if (Array.isArray(v)) v = v.join('; '); v = String(v ?? ''); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }).join(','))].join('\n');
@@ -666,6 +666,6 @@ LOS.prepareRestoredRecord = async rec => mapRefs(rec, async ref => {
   if (!ref.data && Store.mode !== 'cloud') return null; // a claude.ai photo link that can't be opened here
   return ref;
 });
-LOS.dumpAll = () => { const out = {app: 'Rua', version: 1, exportedAt: new Date().toISOString(), records: []}; Object.values(Store.mem).forEach(m => m.forEach(o => out.records.push(o))); return out; };
+LOS.dumpAll = () => { const out = {app: 'Organize Life Co.', version: 1, exportedAt: new Date().toISOString(), records: []}; Object.values(Store.mem).forEach(m => m.forEach(o => out.records.push(o))); return out; };
 
 })();

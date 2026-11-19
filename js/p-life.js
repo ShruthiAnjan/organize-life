@@ -1,4 +1,4 @@
-/* Rua — Kitchen & Grocery, Health & Wellness, Self-care & Beauty, Hobbies */
+/* Organize Life Co. — Kitchen & Grocery, Health & Wellness, Self-care & Beauty, Hobbies */
 (function(){
 'use strict';
 const {esc, uid, num, round2, pct, by, sum, plural, mins, hrs, D, Store, icon: I, chart: C, money: $m, groupBy} = LOS;

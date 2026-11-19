@@ -447,3 +447,12 @@ body.no-anim *,body.no-anim *::before,body.no-anim *::after{animation:none!impor
 .boardbar .spacer{flex:1}
 
 .stats.four{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:700px){.stats.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.brand{align-items:center}
+.brand-mark img{width:38px;height:auto;display:block}
+.brand-text{min-width:0}
+.brand-text .wm{width:142px;height:auto;display:block}
+.brand-text b{color:#8A9A82!important;letter-spacing:.2em!important;font-size:9px!important}
+body.side-collapsed .brand-mark img{width:44px}
+
+.brand{gap:8px;padding-right:8px}.brand .collapse-btn{flex:none;width:30px;height:30px}

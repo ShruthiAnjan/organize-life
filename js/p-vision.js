@@ -1,4 +1,4 @@
-/* Rua — My Vision & Inspiration: Vision Board + Life in Motion */
+/* Organize Life Co. — My Vision & Inspiration: Vision Board + Life in Motion */
 (function(){
 'use strict';
 const {$, $$, esc, uid, by, plural, D, Store, icon: I} = LOS;

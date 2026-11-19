@@ -1,4 +1,4 @@
-/* Rua — Finance Hub: loans, expenses, income, budgets, bills, reports */
+/* Organize Life Co. — Finance Hub: loans, expenses, income, budgets, bills, reports */
 (function(){
 'use strict';
 const {esc, uid, num, round2, sum, pct, by, plural, D, Store, icon: I, chart: C, money: $m, groupBy} = LOS;

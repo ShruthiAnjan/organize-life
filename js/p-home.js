@@ -1,4 +1,4 @@
-/* Rua — Home dashboard */
+/* Organize Life Co. — Home dashboard */
 (function(){
 'use strict';
 const {$, $$, esc, D, Store, icon: I, chart: C, plural, by} = LOS;

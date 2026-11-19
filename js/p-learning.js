@@ -1,4 +1,4 @@
-/* Rua — Learning Hub */
+/* Organize Life Co. — Learning Hub */
 (function(){
 'use strict';
 const {esc, uid, num, pct, by, sum, plural, mins, hrs, D, Store, icon: I, chart: C} = LOS;

@@ -1,4 +1,4 @@
-/* Rua — lightweight SVG charts (validated categorical palette, hover tooltips, table fallback) */
+/* Organize Life Co. — lightweight SVG charts (validated categorical palette, hover tooltips, table fallback) */
 (function(){
 'use strict';
 const {esc, num, clamp, D} = LOS;

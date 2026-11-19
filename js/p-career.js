@@ -1,4 +1,4 @@
-/* Rua — Career Hub: applications, pipeline, analytics, interview prep, networking */
+/* Organize Life Co. — Career Hub: applications, pipeline, analytics, interview prep, networking */
 (function(){
 'use strict';
 const {esc, uid, num, pct, by, plural, D, Store, icon: I, chart: C, groupBy} = LOS;
