@@ -2,7 +2,7 @@
 
 Organize Life Co. is a calm, all-in-one personal life planner: daily priorities, a Jira-style planner, finances (budgets, loans, bills, savings), career tracking, learning, meals, wellness, habits, goals, hobbies and a vision board — in one place.
 
-**Open it:** https://shruthianjan.github.io/Rua/
+**Open it:** https://shruthianjan.github.io/organize-life/
 
 ## Install it as an app (works offline)
 
