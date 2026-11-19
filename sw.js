@@ -2,7 +2,7 @@
    Strategy: try the network first (so updates arrive as soon as you're online),
    fall back to the saved copy when offline. Your data is NOT stored here —
    it lives in the browser's IndexedDB and is never touched by updates. */
-const VERSION = 'olc-v2026.11.18-2';
+const VERSION = 'olc-v2026.11.19-1';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'css/app.css', 'css/fonts.css',
   'fonts/inter.woff2', 'fonts/source-serif-4.woff2',

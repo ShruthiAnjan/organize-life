@@ -456,3 +456,11 @@ body.no-anim *,body.no-anim *::before,body.no-anim *::after{animation:none!impor
 body.side-collapsed .brand-mark img{width:44px}
 
 .brand{gap:8px;padding-right:8px}.brand .collapse-btn{flex:none;width:30px;height:30px}
+
+.collapse-bar{margin-top:16px;border:1px solid var(--line);border-radius:12px;background:#FBF9F6;overflow:hidden}
+.collapse-h{display:flex;align-items:center;gap:10px;width:100%;padding:11px 14px;border:0;background:none;cursor:pointer;font:500 14px var(--sans);color:var(--ink);text-align:left;list-style:none}
+.collapse-h::-webkit-details-marker{display:none}
+.collapse-h:hover{background:#F5F0EA}
+.collapse-h .chev{transition:transform .25s var(--ease);color:var(--muted)}
+.collapse-bar.open>.collapse-h .chev,details.collapse-bar[open]>.collapse-h .chev{transform:rotate(180deg)}
+.collapse-b{padding:6px 14px 14px;background:var(--surface);border-top:1px solid var(--line)}
