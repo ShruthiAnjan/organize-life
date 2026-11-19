@@ -163,7 +163,7 @@ const Store = LOS.Store = {
     if (this.mode === 'cloud') {
       this.dirty[docId] = true; this.pending[docId] = {data};
       if (!this.busy[docId]) this.flush(docId);
-    } else if (this.mode === 'local') { idbPut(docId, data); }
+    } else if (this.mode === 'local') { idbPut(docId, data); LOS.onPersist && LOS.onPersist(docId, data); }
   },
   async flush(docId) {
     this.busy[docId] = true;
@@ -185,6 +185,14 @@ const Store = LOS.Store = {
     this.busy[docId] = false; delete this.dirty[docId];
   },
   onChange(fn) { this.subs.add(fn); },
+  /* used by device sync: write a record that came from another device without re-sending it */
+  applyRemote(docId, obj) {
+    const kind = docId.split('--')[0], rid = docId.slice(kind.length + 2);
+    if (obj) { const o = Object.assign({}, obj, {kind, id: rid}); this._set(o); idbPut(docId, o); }
+    else { this.mem[kind] && this.mem[kind].delete(rid); idbPut(docId, null); }
+  },
+  metaGet(key) { return new Promise(res => { try { const r = this.idb.transaction('docs').objectStore('docs').get(key); r.onsuccess = () => res(r.result || null); r.onerror = () => res(null); } catch (e) { res(null); } }); },
+  metaSet(key, val) { try { const st = this.idb.transaction('docs', 'readwrite').objectStore('docs'); val ? st.put(val, key) : st.delete(key); } catch (e) { console.warn(e); } },
   emit: null,
   setStatus(kind, text) { this.status = {kind, text}; renderSync(); }
 };
@@ -249,6 +257,7 @@ function renderSync() {
   const el = $('#sync-status'); if (!el) return;
   const s = Store.status || {kind: 'off', text: 'Loading…'};
   el.innerHTML = `<div class="sync"><span class="pip ${s.kind === 'cloud' ? '' : s.kind}"></span><span class="txt">${esc(s.text)}</span></div>${LOS.installPrompt ? `<button class="btn sm" style="margin-top:10px;width:100%" data-action="install-app">${I('download')} <span class="txt">Install app</span></button>` : ''}`;
+  LOS.renderSyncBadge && LOS.renderSyncBadge();
 }
 
 /* ---------- images ---------- */

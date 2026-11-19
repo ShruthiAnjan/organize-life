@@ -5,6 +5,7 @@ const {Store, D} = LOS;
 document.getElementById('view').innerHTML = `<div style="display:grid;place-items:center;min-height:60vh;text-align:center"><div><img src="icons/logo-full.png" alt="Organize Life Co." style="width:260px;max-width:70vw;height:auto"><div class="small muted">Opening your space…</div></div></div>`;
 LOS.renderChrome();
 await Store.init();
+if (LOS.Sync) LOS.Sync.init();
 document.body.classList.toggle('side-collapsed', !!Store.settings().sidebarCollapsed && innerWidth > 900);
 Store.onChange(() => LOS.render());
 const h = location.hash.slice(1);

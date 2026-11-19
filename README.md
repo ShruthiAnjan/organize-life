@@ -22,6 +22,10 @@ Organize Life Co. is a calm, all-in-one personal life planner: daily priorities,
 - Uninstalling the app *and* clearing the site's data would erase it, so use **Settings → Export full backup (with photos)** now and then. Keep the file somewhere safe (e.g. OneDrive/Google Drive).
 - Each device keeps its own copy. To move data between devices (or from the claude.ai version), export a backup on one and **Restore from backup** on the other.
 
+## Sync between devices
+
+Optional, free, end-to-end encrypted sync through your own Cloudflare account — see **[sync/SETUP.md](sync/SETUP.md)**.
+
 ## How updates work
 
 1. Ask Claude for a change. Claude edits the code here and pushes it to `main`.

@@ -1,0 +1,9 @@
+# Optional: only needed if you deploy with the Wrangler CLI instead of the dashboard.
+name = "organize-life-sync"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "organize-life-sync"
+database_id = "REPLACE_WITH_YOUR_DATABASE_ID"

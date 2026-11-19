@@ -464,3 +464,10 @@ body.side-collapsed .brand-mark img{width:44px}
 .collapse-h .chev{transition:transform .25s var(--ease);color:var(--muted)}
 .collapse-bar.open>.collapse-h .chev,details.collapse-bar[open]>.collapse-h .chev{transform:rotate(180deg)}
 .collapse-b{padding:6px 14px 14px;background:var(--surface);border-top:1px solid var(--line)}
+
+.sync-badge{display:flex;align-items:center;gap:6px;margin-top:8px;border:0;background:none;padding:0;color:var(--muted);font-size:12px;cursor:pointer}
+.sync-badge svg{width:13px;height:13px}
+.sync-badge.syncing svg{animation:spin 1.2s linear infinite}
+.sync-badge.ok{color:#5E7F55}.sync-badge.error{color:var(--bad)}
+@keyframes spin{to{transform:rotate(360deg)}}
+body.side-collapsed .sync-badge .txt{display:none}
